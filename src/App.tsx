@@ -1,0 +1,37 @@
+
+
+import './App.css'
+
+import Navbar from './components/Navbar'
+import Hero from './components/Hero'
+import Projects from './components/Projects'
+import Skills from './components/Skills';
+import About from './components/About';
+import Contact from './components/Contact';
+
+function App() {
+  return (
+    <div className="portfolio">
+
+      {<Navbar />}
+
+      <main>
+
+        {<Hero />}
+        {<Projects/>}
+        {<Skills/>}
+        {<About/>}
+        {<Contact />}
+
+      </main>
+
+      <footer className="footer">
+        <span>DEV. · Portafolio profesional</span>
+        <span>Desarrollado con React y TypeScript</span>
+      </footer>
+
+    </div>
+  )
+}
+
+export default App
