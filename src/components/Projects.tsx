@@ -6,6 +6,8 @@ const projects = [
       'Sistema web que utiliza Inteligencia Artificial para identificar estudiantes y analizar sus expresiones en tiempo real para clasificar emociones durante una clase.',
     technologies: ['Python', 'Django', 'TensorFlow', 'OpenCV', 'MySQL'],
     type: 'Proyecto académico',
+    status: 'En preparación',
+    github: null,
   },
   {
     title: 'Pizarra colaborativa en tiempo real',
@@ -13,6 +15,8 @@ const projects = [
       'Aplicación desarrollada en Java que permite a múltiples usuarios interactuar con una pizarra compartida en tiempo real. Implementa una arquitectura cliente-servidor y utiliza hilos y mecanismos de concurrencia para gestionar múltiples conexiones y solicitudes simultáneas.',
     technologies: ['Java', 'Arquitectura Cliente-Servidor', 'Concurrencia', 'Sockets', 'MySQL'],
     type: 'Proyecto académico',
+    status: 'Publicado',
+    github: 'https://github.com/FerGadeaS/pizarra-colaborativa-java',
   },
   {
     title: 'Sistema de registro de asistencia mediante QR',
@@ -20,6 +24,8 @@ const projects = [
       'Aplicaciones para registrar asistencia mediante códigos QR y almacenar registros en bases de datos.',
     technologies: ['Android Studio', 'Firebase', 'PHP', 'MySQL'],
     type: 'Proyecto académico',
+    status: 'En preparación',
+    github: null,
   },
 ];
 
@@ -39,13 +45,32 @@ function Projects() {
         {projects.map((project) => (
           <article className="project-card" key={project.title}>
             <span className="project-type">{project.type}</span>
+
             <h3>{project.title}</h3>
+
             <p>{project.description}</p>
 
             <div className="project-technologies">
               {project.technologies.map((technology) => (
                 <span key={technology}>{technology}</span>
               ))}
+            </div>
+
+            <div className="project-footer">
+              {project.github ? (
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="project-link"
+                >
+                  Ver en GitHub ↗
+                </a>
+              ) : (
+                <span className="project-status">
+                  {project.status}
+                </span>
+              )}
             </div>
           </article>
         ))}
